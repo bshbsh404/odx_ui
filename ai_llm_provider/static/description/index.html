@@ -1,0 +1,208 @@
+<section style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1d1d1f;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+    <!-- Hero -->
+    <div style="padding:80px 0 40px;text-align:center;">
+        <h2 style="font-size:44px;font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:#1d1d1f;margin:0 0 14px;">One API for every LLM provider.</h2>
+        <p style="font-size:19px;font-weight:400;color:#86868b;line-height:1.4;max-width:560px;margin:0 auto;">OpenAI, Anthropic, Gemini, Groq, Mistral, ElevenLabs, Ollama, OpenRouter, and any OpenAI-compatible endpoint. Configure once, call from any Odoo module.</p>
+    </div>
+
+    <!-- Provider List -->
+    <div style="padding:10px 0 70px;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.06);">
+            <img src="multiple providers.jpeg" alt="10 AI providers configured in Odoo" style="width:100%;height:auto;display:block;">
+        </div>
+        <p style="text-align:center;font-size:13px;color:#86868b;margin-top:14px;font-weight:500;">10 providers, 20+ models</p>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- Test Connection -->
+    <div style="padding:70px 0;">
+        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#86868b;margin:0 0 6px;">Setup</p>
+        <h3 style="font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#1d1d1f;margin:0 0 10px;">Add a provider in 30 seconds.</h3>
+        <p style="font-size:16px;color:#86868b;line-height:1.5;max-width:500px;margin:0;">Pick a provider type, paste your API key, add your models. Test the connection with one click.</p>
+        <div style="margin-top:36px;border-radius:14px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.06);">
+            <img src="Test connection.jpeg" alt="Anthropic provider with successful connection test" style="width:100%;height:auto;display:block;">
+        </div>
+        <p style="text-align:center;font-size:13px;color:#86868b;margin-top:14px;font-weight:500;">Anthropic with Claude Sonnet 4.6 and Claude Opus 4.6</p>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- Settings -->
+    <div style="padding:70px 0;">
+        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#86868b;margin:0 0 6px;">Settings</p>
+        <h3 style="font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#1d1d1f;margin:0 0 10px;">Managed from Odoo Settings.</h3>
+        <p style="font-size:16px;color:#86868b;line-height:1.5;max-width:500px;margin:0;">Providers appear under the ODX AI section. API keys are restricted to system administrators.</p>
+        <div style="margin-top:36px;border-radius:14px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.06);">
+            <img src="odoo settings.jpeg" alt="ODX AI section in Odoo Settings" style="width:100%;height:auto;display:block;">
+        </div>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- API -->
+    <div style="padding:70px 0;">
+        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#86868b;margin:0 0 6px;">API</p>
+        <h3 style="font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#1d1d1f;margin:0 0 10px;">Two methods. That covers it.</h3>
+        <p style="font-size:16px;color:#86868b;line-height:1.5;max-width:520px;margin:0 0 36px;"><span style="font-family:'SF Mono',Menlo,monospace;font-size:14px;background:#f5f5f7;padding:2px 6px;border-radius:4px;">chat_completion()</span> for a full response. <span style="font-family:'SF Mono',Menlo,monospace;font-size:14px;background:#f5f5f7;padding:2px 6px;border-radius:4px;">chat_completion_stream()</span> for SSE streaming. Both normalize tool calls, reasoning content, and usage across all providers.</p>
+
+        <div style="background:#1d1d1f;border-radius:10px 10px 0 0;padding:10px 20px;display:flex;align-items:center;gap:8px;">
+            <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+            <span style="font-size:12px;color:#86868b;margin-left:8px;">your_module.py</span>
+        </div>
+        <div style="background:#2d2d2f;border-radius:0 0 10px 10px;padding:20px 24px;font-family:'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.8;color:#e8e8ed;overflow-x:auto;">
+<span style="color:#6bdfff;">provider</span> = <span style="color:#6bdfff;">self</span>.env[<span style="color:#ffa14f;">"ai.llm.provider"</span>].search([<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span style="color:#ffa14f;">"code"</span>, <span style="color:#ffa14f;">"="</span>, <span style="color:#ffa14f;">"anthropic"</span>),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span style="color:#ffa14f;">"is_active"</span>, <span style="color:#ffa14f;">"="</span>, <span style="color:#d0bf69;">True</span>),<br>
+], limit=<span style="color:#d0bf69;">1</span>)<br>
+<br>
+<span style="color:#86868b;"># Synchronous</span><br>
+<span style="color:#6bdfff;">result</span> = <span style="color:#6bdfff;">provider</span>.chat_completion(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffa14f;">"claude-sonnet-4-6"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[{<span style="color:#ffa14f;">"role"</span>: <span style="color:#ffa14f;">"user"</span>, <span style="color:#ffa14f;">"content"</span>: <span style="color:#ffa14f;">"Summarize this invoice."</span>}],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tools=tool_definitions,<br>
+)<br>
+<span style="color:#6bdfff;">answer</span> = <span style="color:#6bdfff;">result</span>[<span style="color:#ffa14f;">"choices"</span>][<span style="color:#d0bf69;">0</span>][<span style="color:#ffa14f;">"message"</span>][<span style="color:#ffa14f;">"content"</span>]<br>
+<br>
+<span style="color:#86868b;"># Streaming</span><br>
+<span style="color:#ff7ab2;">for</span> <span style="color:#6bdfff;">event</span> <span style="color:#ff7ab2;">in</span> <span style="color:#6bdfff;">provider</span>.chat_completion_stream(<span style="color:#ffa14f;">"claude-sonnet-4-6"</span>, messages):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff7ab2;">if</span> <span style="color:#6bdfff;">event</span>[<span style="color:#ffa14f;">"type"</span>] == <span style="color:#ffa14f;">"content_delta"</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff7ab2;">yield</span> <span style="color:#6bdfff;">event</span>[<span style="color:#ffa14f;">"delta"</span>]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff7ab2;">elif</span> <span style="color:#6bdfff;">event</span>[<span style="color:#ffa14f;">"type"</span>] == <span style="color:#ffa14f;">"result"</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6bdfff;">tool_calls</span> = <span style="color:#6bdfff;">event</span>[<span style="color:#ffa14f;">"result"</span>][<span style="color:#ffa14f;">"choices"</span>][<span style="color:#d0bf69;">0</span>][<span style="color:#ffa14f;">"message"</span>].get(<span style="color:#ffa14f;">"tool_calls"</span>)
+        </div>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- Features -->
+    <div style="padding:70px 0;">
+        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#86868b;margin:0 0 6px;">Under the Hood</p>
+        <h3 style="font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#1d1d1f;margin:0 0 30px;">What it handles for you.</h3>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;">
+            <div>
+                <p style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0 0 4px;">Tool Calling</p>
+                <p style="font-size:13px;color:#86868b;line-height:1.5;margin:0;">Normalizes function call formats across providers. Handles streamed argument chunks and multi-call responses.</p>
+            </div>
+            <div>
+                <p style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0 0 4px;">Reasoning Content</p>
+                <p style="font-size:13px;color:#86868b;line-height:1.5;margin:0;">Extracts thinking/reasoning blocks from providers that emit them. Yields them as separate stream events so you can display or discard them.</p>
+            </div>
+            <div>
+                <p style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0 0 4px;">Rate Limits</p>
+                <p style="font-size:13px;color:#86868b;line-height:1.5;margin:0;">Parses Retry-After headers. Retries transient errors with capped backoff. Fails fast on long rate limits instead of blocking Odoo workers.</p>
+            </div>
+            <div>
+                <p style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0 0 4px;">SSRF Protection</p>
+                <p style="font-size:13px;color:#86868b;line-height:1.5;margin:0;">Blocks private IPs and internal hostnames on provider URLs. Ollama is exempted since it runs locally.</p>
+            </div>
+            <div>
+                <p style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0 0 4px;">Text-to-Speech</p>
+                <p style="font-size:13px;color:#86868b;line-height:1.5;margin:0;">Generate audio from text using ElevenLabs or other TTS providers. Uses the same auth and retry infrastructure as chat completions.</p>
+            </div>
+            <div>
+                <p style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0 0 4px;">Audio Transcription</p>
+                <p style="font-size:13px;color:#86868b;line-height:1.5;margin:0;">Transcribe audio via OpenAI Whisper. Supports webm, mp4, wav, mp3, ogg, and m4a.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- Providers Table -->
+    <div style="padding:70px 0;">
+        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#86868b;margin:0 0 6px;">Providers</p>
+        <h3 style="font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#1d1d1f;margin:0 0 24px;">Supported out of the box.</h3>
+
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="border-bottom:2px solid #e8e8ed;">
+                    <th style="text-align:left;padding:10px 12px;font-weight:600;color:#1d1d1f;">Provider</th>
+                    <th style="text-align:left;padding:10px 12px;font-weight:600;color:#1d1d1f;">Type</th>
+                    <th style="text-align:left;padding:10px 12px;font-weight:600;color:#1d1d1f;">Auth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom:1px solid #f0f0f2;">
+                    <td style="padding:10px 12px;font-weight:500;">OpenAI</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat, TTS, Embedding, Whisper</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer token</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;background:#fafafa;">
+                    <td style="padding:10px 12px;font-weight:500;">Anthropic</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer token</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;">
+                    <td style="padding:10px 12px;font-weight:500;">Google Gemini</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat, Embedding</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer token</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;background:#fafafa;">
+                    <td style="padding:10px 12px;font-weight:500;">Groq</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer token</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;">
+                    <td style="padding:10px 12px;font-weight:500;">Mistral</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat, Embedding</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer token</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;background:#fafafa;">
+                    <td style="padding:10px 12px;font-weight:500;">ElevenLabs</td>
+                    <td style="padding:10px 12px;color:#86868b;">Text-to-Speech</td>
+                    <td style="padding:10px 12px;color:#86868b;">xi-api-key (automatic)</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;">
+                    <td style="padding:10px 12px;font-weight:500;">OpenRouter</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat (multi-model)</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer token</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;background:#fafafa;">
+                    <td style="padding:10px 12px;font-weight:500;">Ollama</td>
+                    <td style="padding:10px 12px;color:#86868b;">Chat (local)</td>
+                    <td style="padding:10px 12px;color:#86868b;">None required</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f0f0f2;">
+                    <td style="padding:10px 12px;font-weight:500;">Custom</td>
+                    <td style="padding:10px 12px;color:#86868b;">Any</td>
+                    <td style="padding:10px 12px;color:#86868b;">Bearer or custom headers</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- Model Capabilities -->
+    <div style="padding:70px 0;">
+        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#86868b;margin:0 0 6px;">Models</p>
+        <h3 style="font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#1d1d1f;margin:0 0 10px;">One default model per purpose.</h3>
+        <p style="font-size:16px;color:#86868b;line-height:1.5;max-width:500px;margin:0 0 36px;">Each model stores its purpose, max tokens, tool support, and vision capability. Mark one as default per purpose. Call <span style="font-family:'SF Mono',Menlo,monospace;font-size:14px;background:#f5f5f7;padding:2px 6px;border-radius:4px;">get_default_model("chat")</span> from any module to get it.</p>
+
+        <div style="background:#1d1d1f;border-radius:10px;padding:20px 24px;font-family:'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.8;color:#e8e8ed;overflow-x:auto;">
+<span style="color:#86868b;"># Get the default chat model across all providers</span><br>
+<span style="color:#6bdfff;">model</span> = <span style="color:#6bdfff;">self</span>.env[<span style="color:#ffa14f;">"ai.llm.model"</span>].get_default_model(<span style="color:#ffa14f;">"chat"</span>)<br>
+<br>
+<span style="color:#86868b;"># Use it</span><br>
+<span style="color:#6bdfff;">result</span> = <span style="color:#6bdfff;">model</span>.provider_id.chat_completion(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6bdfff;">model</span>.model_id,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;messages,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tools=tools <span style="color:#ff7ab2;">if</span> <span style="color:#6bdfff;">model</span>.supports_tools <span style="color:#ff7ab2;">else</span> <span style="color:#d0bf69;">None</span>,<br>
+)
+        </div>
+    </div>
+
+    <hr style="border:none;height:1px;background:#e8e8ed;margin:0;">
+
+    <!-- Closing -->
+    <div style="text-align:center;padding:60px 0 50px;">
+        <p style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#1d1d1f;margin:0 0 8px;">ODX LLM</p>
+        <p style="font-size:14px;color:#86868b;margin:0;">Multi-provider LLM integration for Odoo 19</p>
+    </div>
+
+</section>

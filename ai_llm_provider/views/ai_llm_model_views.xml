@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="ai_llm_model_view_list" model="ir.ui.view">
+        <field name="name">ai.llm.model.list</field>
+        <field name="model">ai.llm.model</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="model_id"/>
+                <field name="provider_id"/>
+                <field name="purpose"/>
+                <field name="is_default"/>
+                <field name="supports_tools"/>
+                <field name="max_tokens"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="ai_llm_model_view_form" model="ir.ui.view">
+        <field name="name">ai.llm.model.form</field>
+        <field name="model">ai.llm.model</field>
+        <field name="arch" type="xml">
+            <form string="AI Model">
+                <sheet>
+                    <group>
+                        <group string="Model Info">
+                            <field name="name"/>
+                            <field name="model_id"/>
+                            <field name="provider_id"/>
+                            <field name="purpose"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="Capabilities">
+                            <field name="is_default"/>
+                            <field name="max_tokens"/>
+                            <field name="supports_tools"/>
+                            <field name="supports_vision"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group string="Voice / TTS Settings" invisible="purpose != 'tts'">
+                        <group>
+                            <field name="voice_id"/>
+                        </group>
+                        <group>
+                            <field name="voice_settings_json"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="ai_llm_model_action" model="ir.actions.act_window">
+        <field name="name">AI Models</field>
+        <field name="res_model">ai.llm.model</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No AI models configured yet
+            </p>
+            <p>
+                Models are typically added through their provider configuration.
+            </p>
+        </field>
+    </record>
+
+</odoo>

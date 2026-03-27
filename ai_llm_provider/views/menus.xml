@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_ai_llm_root"
+              name="AI Providers"
+              parent="base.menu_custom"
+              sequence="50"
+              groups="ai_llm_provider.group_ai_llm_manager"/>
+    <menuitem id="menu_ai_llm_providers"
+              name="Providers"
+              parent="menu_ai_llm_root"
+              action="ai_llm_provider_action"
+              sequence="10"
+              groups="ai_llm_provider.group_ai_llm_manager"/>
+</odoo>
