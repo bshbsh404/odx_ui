@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="ai_llm_provider_view_list" model="ir.ui.view">
+        <field name="name">ai.llm.provider.list</field>
+        <field name="model">ai.llm.provider</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="base_url"/>
+                <field name="is_active"/>
+                <field name="model_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="ai_llm_provider_view_form" model="ir.ui.view">
+        <field name="name">ai.llm.provider.form</field>
+        <field name="model">ai.llm.provider</field>
+        <field name="arch" type="xml">
+            <form string="AI Provider">
+                <header>
+                    <button name="action_test_connection"
+                            string="Test Connection"
+                            type="object"
+                            class="oe_highlight"
+                            groups="base.group_system"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+
+                    <group>
+                        <group string="Configuration">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="base_url" placeholder="https://api.openai.com/v1"/>
+                            <field name="sequence"/>
+                            <field name="is_active"/>
+                        </group>
+                        <group string="Authentication">
+                            <field name="api_key" password="True" groups="base.group_system"/>
+                            <field name="custom_headers" groups="base.group_system"
+                                   placeholder='{"X-Custom-Header": "value"}'/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Models" name="models">
+                            <field name="model_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="model_id"/>
+                                    <field name="purpose"/>
+                                    <field name="is_default"/>
+                                    <field name="supports_tools"/>
+                                    <field name="supports_vision"/>
+                                    <field name="max_tokens"/>
+                                    <field name="voice_id" optional="hide"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="ai_llm_provider_action" model="ir.actions.act_window">
+        <field name="name">AI Providers</field>
+        <field name="res_model">ai.llm.provider</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure your first AI provider
+            </p>
+            <p>
+                Add API providers like OpenAI, Anthropic, Google Gemini, and more.
+            </p>
+        </field>
+    </record>
+
+</odoo>

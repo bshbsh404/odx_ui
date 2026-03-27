@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_ai_llm" model="ir.module.category">
+        <field name="name">AI LLM Providers</field>
+        <field name="description">AI language model provider management</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="privilege_ai_llm" model="res.groups.privilege">
+        <field name="name">LLM Provider Access</field>
+        <field name="category_id" ref="ai_llm_provider.module_category_ai_llm"/>
+    </record>
+
+    <record id="group_ai_llm_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="privilege_id" ref="ai_llm_provider.privilege_ai_llm"/>
+    </record>
+
+    <record id="group_ai_llm_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="privilege_id" ref="ai_llm_provider.privilege_ai_llm"/>
+        <field name="implied_ids" eval="[Command.link(ref('ai_llm_provider.group_ai_llm_user'))]"/>
+        <field name="user_ids" eval="[Command.link(ref('base.user_admin'))]"/>
+    </record>
+</odoo>

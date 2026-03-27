@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ai_llm_provider_user,ai.llm.provider.user,model_ai_llm_provider,ai_llm_provider.group_ai_llm_user,1,0,0,0
+access_ai_llm_provider_manager,ai.llm.provider.manager,model_ai_llm_provider,ai_llm_provider.group_ai_llm_manager,1,1,1,1
+access_ai_llm_model_user,ai.llm.model.user,model_ai_llm_model,ai_llm_provider.group_ai_llm_user,1,0,0,0
+access_ai_llm_model_manager,ai.llm.model.manager,model_ai_llm_model,ai_llm_provider.group_ai_llm_manager,1,1,1,1
