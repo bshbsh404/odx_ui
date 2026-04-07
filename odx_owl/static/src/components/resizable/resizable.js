@@ -177,6 +177,10 @@ export class ResizablePanelGroup extends Component {
     registerPanel(panelApi) {
         if (!this.panels.find((panel) => panel.id === panelApi.id)) {
             this.panels.push(panelApi);
+            this.panels.sort((a, b) => {
+                if (!a.el || !b.el) return 0;
+                return a.el.compareDocumentPosition(b.el) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+            });
             this.state.layout = computePanelLayout(
                 this.panels,
                 this.props.layout || this.props.defaultLayout
@@ -280,6 +284,7 @@ export class ResizablePanel extends Component {
     };
 
     setup() {
+        this.rootRef = useRef("rootRef");
         this.state = useState({
             id: this.props.panelId || nextId("odx-resizable-panel"),
         });
@@ -288,6 +293,7 @@ export class ResizablePanel extends Component {
             () => {
                 const api = {
                     id: this.state.id,
+                    el: this.rootRef.el,
                     getMaxSize: () => this.getMaxSize(),
                     getMinSize: () => this.getMinSize(),
                     getPreferredSize: () => this.getPreferredSize(),
