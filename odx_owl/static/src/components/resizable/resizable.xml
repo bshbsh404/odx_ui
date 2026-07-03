@@ -15,7 +15,7 @@
     </t>
 
     <t t-name="odx_owl.ResizablePanel">
-        <t t-tag="props.tag" t-att-class="classes" t-att-style="panelStyle">
+        <t t-ref="rootRef" t-tag="props.tag" t-att-class="classes" t-att-style="panelStyle">
             <t t-slot="default"/>
         </t>
     </t>
